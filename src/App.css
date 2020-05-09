@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -35,4 +38,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.react-calendar__tile {
+  height: 50px;
+}
+
+
+.react-calendar__month-view__days__day--weekend{
+  color: green;
 }
