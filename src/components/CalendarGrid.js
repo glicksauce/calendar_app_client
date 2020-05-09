@@ -16,8 +16,6 @@ class CalendarGrid extends Component {
       .then(response => response.json())
   }
 
-
-
   render () {
    
     return (
@@ -27,7 +25,7 @@ class CalendarGrid extends Component {
           onChange={this.onChange}
           value={this.state.date}
         />
-        <div class='img-display'>
+        <div className='img-display'>
           image goes here
         </div>
       </>

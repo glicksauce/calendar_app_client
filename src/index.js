@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import * as $ from 'jquery'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,4 +17,20 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+$(() => {
+  const handlerIn = () =>{
+    $('.img-display').text(this.props)
+    //console.log("yes")
+  }
 
+  const handlerOut = () =>{
+    $('.img-display').text("image goes here")
+    //console.log("no")
+  }
+
+  
+  $('.react-calendar__tile').hover(handlerIn,handlerOut)
+  
+
+
+})
