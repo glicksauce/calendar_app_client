@@ -17,20 +17,20 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-$(() => {
-  const handlerIn = () =>{
-    $('.img-display').text(this.props)
-    //console.log("yes")
-  }
+// $(() => {
+//   const handlerIn = () =>{
+//     $('.img-display').text("hovering")
+//     //console.log("yes")
+//   }
 
-  const handlerOut = () =>{
-    $('.img-display').text("image goes here")
-    //console.log("no")
-  }
+//   const handlerOut = () =>{
+//     $('.img-display').text("image goes here")
+//     //console.log("no")
+//   }
 
   
-  $('.react-calendar__tile').hover(handlerIn,handlerOut)
+//   $('.react-calendar__tile').hover(handlerIn,handlerOut)
   
 
 
-})
+// })
