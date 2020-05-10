@@ -60,7 +60,11 @@ class CalendarGrid extends Component {
         <Calendar 
         onChange={this.onChange}
         value={this.date}/>
-        <CalendarImages />
+        <CalendarImages 
+          selectedDateFormatted={this.state.date.toString().substring(0,15)}
+          selectedDate = {this.state.date}
+          handleSubmit={this.props.handleSubmit}
+        />
       </>
     )
   }

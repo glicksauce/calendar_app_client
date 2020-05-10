@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar'
-import CalendarMonthView from './CalendarMonthView.js'
+import CalendarForm from './CalendarForm.js'
 import * as $ from 'jquery'
 import CalendarDisplay from './CalendarDisplay.js'
 import { render } from '@testing-library/react';
@@ -44,10 +44,13 @@ class CalendarImages extends Component {
   }
 
   componentDidMount() {
+    
     $('.react-calendar__tile').click((e)=>{
-       let clickedDate = ($(e.target).children()[0].ariaLabel)
-
-      this.displayImage(clickedDate)
+      //sometimes this will be undefined if browser is slow or something
+      if ($(e.target) != undefined) {
+        let clickedDate = ($(e.target).children()[0].ariaLabel)
+        this.displayImage(clickedDate)
+      }
     })
     fetch('/calendars')                                        
       .then(response => response.json())                                            
@@ -56,10 +59,11 @@ class CalendarImages extends Component {
     
   }
 
-  render(){
+  render() {
+
     return (
       <>
-      
+      <h2>{this.props.selectedDateFormatted}</h2>
       {this.state.imageArray.map(image => {
 
         return (
@@ -68,6 +72,10 @@ class CalendarImages extends Component {
           </div>
         )
       })}
+      <CalendarForm 
+        selectedDate = {this.props.selectedDate}
+        handleSubmit={this.props.handleSubmit}
+      />
       </>
     )
   }

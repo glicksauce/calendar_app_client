@@ -8,18 +8,28 @@ import Calendar from 'react-calendar'
 
 class App extends Component {
   componentDidMount() {
-    // fetch('/calendars')                                        
-    //   .then(response => response.json())                                            
-    //   .then(json => console.log(json))                                              
-    //   .catch(err => console.log(err))  
   }
 
-
+  handleAdd = (event, formInputs) =>{
+    event.preventDefault()
+    fetch('http://localhost:3000/photos',{
+      body: JSON.stringify(formInputs),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(createdImage => console.log(createdImage.json()))
+    .catch(error => console.log(error))
+    }    
 
   render() {
     return (
       <div className="App">
-        <CalendarGrid />
+        <CalendarGrid 
+          handleSubmit={this.handleAdd}
+        />
       </div>
     );
   }
