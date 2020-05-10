@@ -38,24 +38,15 @@ class CalendarForm extends Component {
     },200)
   }
 
-  displayImage = (date) =>{
+  dateConvert = (date) => {
     //converts date before calling fetch
     const stateDateFormatted = new Date(date)
     .toISOString()
     .toString()
     .substring(0,10)
-    
-    console.log("clicked date is", stateDateFormatted)
-    fetch('/calendars/' + stateDateFormatted)                                        
-    .then(response => response.json())                                            
-    .then(json => {
-      console.log("fetch results: ", json)
-      if (json.photos) {
-        this.addImagesToState(json.photos)
-      }
-    })                                              
-    .catch(err => console.log(err)) 
-  }
+    return stateDateFormatted
+}
+
 
   componentDidMount() {
     this.onTileClick()
@@ -77,10 +68,17 @@ handleSubmit =(event) => {
     }
 
     this.props.handleSubmit(event, imageToAdd)
+
+    //add new image to state but only if on the date image was added in
+    let propsDate = this.dateConvert(this.props.selectedDate)
+    if (propsDate == imageToAdd.img_date){
+        this.props.addedImage(imageToAdd.img_src)
+    }
+
 }
 
   render() {
-
+    //console.log(this.dateConvert(this.props.selectedDate))
     return (
       <>
       <h3>Add Images</h3>

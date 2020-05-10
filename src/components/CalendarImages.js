@@ -43,6 +43,14 @@ class CalendarImages extends Component {
     .catch(err => console.log(err)) 
   }
 
+  addedImage = (img_src) =>{
+    let newImages = this.state.imageArray
+    newImages.push(img_src)
+    this.setState({
+        imageArray: newImages
+    })
+  }
+
   componentDidMount() {
     
     $('.react-calendar__tile').click((e)=>{
@@ -75,6 +83,7 @@ class CalendarImages extends Component {
       <CalendarForm 
         selectedDate = {this.props.selectedDate}
         handleSubmit={this.props.handleSubmit}
+        addedImage={this.addedImage}
       />
       </>
     )
