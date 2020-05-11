@@ -56,8 +56,8 @@ class CalendarImages extends Component {
     })
   }
 
-  deleteImage = (imageIndex) =>{
-    console.log("delete clicked" + imageIndex)
+  deleteImage = (imageIndex, imageId) =>{
+    console.log("delete clicked index : " + imageIndex + ", Id: " + imageId)
 
     //remove image from state
     let refreshedImages = this.state.imageArray
@@ -71,7 +71,7 @@ class CalendarImages extends Component {
     })
 
     //remove image from DB
-    // this.props.deleteImage
+    this.props.deletePhoto(imageId)
   }
 
   componentDidMount() {
@@ -101,7 +101,7 @@ class CalendarImages extends Component {
         return (
           <div className="calendar-image" key={index}>
             <img src={image.img_src}></img>
-            <div className="delete-button" onClick={()=>this.deleteImage(index)} id={image.id}>X</div>
+            <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
           </div>
         )
       })}

@@ -29,7 +29,13 @@ class App extends Component {
       )}
 
   deletePhoto = (photoID) =>{
-    
+    fetch('http://localhost:3000/photos/' + photoID ,{
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        }
+      })
   }
 
   render() {
@@ -37,6 +43,7 @@ class App extends Component {
       <div className="App">
         <CalendarGrid 
           handleSubmit={this.handleAdd}
+          deletePhoto={this.deletePhoto}
         />
       </div>
     );
