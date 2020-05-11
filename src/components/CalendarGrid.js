@@ -64,6 +64,7 @@ class CalendarGrid extends Component {
           selectedDateFormatted={this.state.date.toString().substring(0,15)}
           selectedDate = {this.state.date}
           handleSubmit={this.props.handleSubmit}
+          handleUpdate={this.props.handleUpdate}
           deletePhoto={this.props.deletePhoto}
         />
       </>

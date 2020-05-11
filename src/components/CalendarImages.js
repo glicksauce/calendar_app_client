@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar'
 import CalendarForm from './CalendarForm.js'
+import CalendarUpdateForm from './CalendarUpdateForm.js'
 import * as $ from 'jquery'
 import CalendarDisplay from './CalendarDisplay.js'
 import { render } from '@testing-library/react';
@@ -74,6 +75,11 @@ class CalendarImages extends Component {
     this.props.deletePhoto(imageId)
   }
 
+  loadUpdateForm = () =>{
+    console.log("update clicked")
+    $('.calendar-image').hide()
+  }
+
   componentDidMount() {
     
     $('.react-calendar__tile').click((e)=>{
@@ -99,18 +105,28 @@ class CalendarImages extends Component {
       {this.state.photoArray.map((image,index) => {
 
         return (
-          <div className="calendar-image" key={index}>
+        <div className="entry-container" key={index}>
+          <div className="calendar-image" >
             <img src={image.img_src}></img>
-            <div class="journal-entry">{image.journal_entry}</div>
+            <div className="journal-entry">{image.journal_entry}</div>
             <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
+            <div className="update" onClick={()=>this.loadUpdateForm()}>update</div>
           </div>
+
+          <CalendarUpdateForm
+            entry={this.state.photoArray[index]}
+            handleUpdate={this.props.handleUpdate}
+          />
+        </div>
         )
       })}
-      <CalendarForm 
+      <CalendarForm
         selectedDate = {this.props.selectedDate}
         handleSubmit={this.props.handleSubmit}
         addedImage={this.addedImage}
       />
+      
+      
       </>
     )
   }

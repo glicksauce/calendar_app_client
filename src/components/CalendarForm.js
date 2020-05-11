@@ -114,7 +114,7 @@ handleSubmit =(event) => {
                 type="text"
                 id="journal_entry"
                 name="journal_entry"
-                placeholder="journal_entry"
+                placeholder="journal entry"
                 value={this.state.journal_entry}
                 onChange={this.handleChange}
             />            

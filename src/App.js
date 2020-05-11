@@ -28,6 +28,23 @@ class App extends Component {
       .catch(error => console.log(error))
       )}
 
+      handleUpdate = async (event, formInputs, photo_id) =>{
+
+      // let obj;
+        event.preventDefault()
+        return await Promise.resolve(fetch('http://localhost:3000/photos/' + photo_id,{
+          body: JSON.stringify(formInputs),
+          method: 'PUT',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => (res.json()))
+        .then(obj => console.log(obj))
+        .catch(error => console.log(error))
+        )}      
+
   deletePhoto = (photoID) =>{
     fetch('http://localhost:3000/photos/' + photoID ,{
         method: 'DELETE',
@@ -43,6 +60,7 @@ class App extends Component {
       <div className="App">
         <CalendarGrid 
           handleSubmit={this.handleAdd}
+          handleUpdate={this.handleUpdate}
           deletePhoto={this.deletePhoto}
         />
       </div>
