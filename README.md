@@ -9,7 +9,7 @@ Repo: https://github.com/glicksauce/calendar_app_api
 Heroku: 
 
 #### Schema:
-![](/blob/master/public/current_schema.PNG)
+![](/public/current_schema.PNG)
 Two tables in a one-to-many relationship. One calendar can have many photos. Notice the primary key of calendar is the date,  not Id. This makes it easy to associate dates of a photo with the calendar(date). See below for disadvantages
 
 #### Access:  
@@ -31,8 +31,8 @@ Heroku:
 ---
 ### Improvements
 Backend. Has some difficulties to overcome
-![](/tree/master/public/current_schema_problems.PNG)
+![](/public/current_schema_problems.PNG)
 
 
 Need better schema to accomodate adding in multiple users:
-![](/tree/master/public/improved_schema.PNG)
+![](/public/improved_schema.PNG)
