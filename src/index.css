@@ -12,6 +12,23 @@ code {
     monospace;
 }
 
-img{
+.calendar-image{
   width: 200px;
+}
+
+img{
+  width: 100%;
+}
+.delete-button{
+  position: relative;
+  display: inline;
+  color:red;
+  bottom: 25px;
+  right: -90px;
+  border: 2px solid white;
+  background: white;
+}
+
+.delete-button:hover{
+  cursor: pointer;
 }

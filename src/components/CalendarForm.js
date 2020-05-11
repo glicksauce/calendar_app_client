@@ -67,12 +67,21 @@ handleSubmit =(event) => {
       img_src: this.state.img_src,
     }
 
-    this.props.handleSubmit(event, imageToAdd)
+    //call POST function
+    let newPhotoObject
+    this.props.handleSubmit(event, imageToAdd).then(result => newPhotoObject = result)
+    console.log("new photo id is: " + newPhotoObject)
+
+    //pause to get POST results
+    setTimeout(()=>{
+        console.log("new photo id is: " + JSON.stringify(newPhotoObject))
+        imageToAdd["id"] = newPhotoObject.id
+    },500)
 
     //add new image to state but only if on the date image was added in
     let propsDate = this.dateConvert(this.props.selectedDate)
     if (propsDate == imageToAdd.img_date){
-        this.props.addedImage(imageToAdd.img_src)
+        this.props.addedImage(imageToAdd.img_src, imageToAdd)
     }
 
 }

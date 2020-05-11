@@ -10,19 +10,27 @@ class App extends Component {
   componentDidMount() {
   }
 
-  handleAdd = (event, formInputs) =>{
-    event.preventDefault()
-    fetch('http://localhost:3000/photos',{
-      body: JSON.stringify(formInputs),
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(createdImage => console.log(createdImage.json()))
-    .catch(error => console.log(error))
-    }    
+  handleAdd = async (event, formInputs) =>{
+
+    // let obj;
+      event.preventDefault()
+      return await Promise.resolve(fetch('http://localhost:3000/photos',{
+        body: JSON.stringify(formInputs),
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => (res.json()))
+      // .then(data => obj = data)
+      // .then(() => console.log(obj))
+      .catch(error => console.log(error))
+      )}
+
+  deletePhoto = (photoID) =>{
+    
+  }
 
   render() {
     return (

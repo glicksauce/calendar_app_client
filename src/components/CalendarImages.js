@@ -9,13 +9,15 @@ import { render } from '@testing-library/react';
 class CalendarImages extends Component {
   
   state = {
-    imageArray: []
+    imageArray: [],
+    photoArray: []
   }
 
   addImagesToState = imageArray =>{
     let images = imageArray.map(x => x.img_src)
     this.setState({
-      imageArray: images
+      imageArray: images,
+      photoArray: imageArray
 
     })
   }
@@ -43,19 +45,41 @@ class CalendarImages extends Component {
     .catch(err => console.log(err)) 
   }
 
-  addedImage = (img_src) =>{
+  addedImage = (img_src, image) =>{
     let newImages = this.state.imageArray
     newImages.push(img_src)
+    let newPhotos = this.state.photoArray
+    newPhotos.push(image)
     this.setState({
-        imageArray: newImages
+        imageArray: newImages,
+        photoArray: newPhotos
     })
+  }
+
+  deleteImage = (imageIndex) =>{
+    console.log("delete clicked" + imageIndex)
+
+    //remove image from state
+    let refreshedImages = this.state.imageArray
+    let refreshedPhotos = this.state.photoArray
+    refreshedImages.splice(imageIndex,1)
+    refreshedPhotos.splice(imageIndex,1)
+    // console.log(refreshedImages)
+    this.setState({
+      imageArray: refreshedImages,
+      photoArray: refreshedPhotos
+    })
+
+    //remove image from DB
+    // this.props.deleteImage
   }
 
   componentDidMount() {
     
     $('.react-calendar__tile').click((e)=>{
       //sometimes this will be undefined if browser is slow or something
-      if ($(e.target) != undefined) {
+      if (e != undefined) {
+        console.log($(e.target).children())
         let clickedDate = ($(e.target).children()[0].ariaLabel)
         this.displayImage(clickedDate)
       }
@@ -72,11 +96,12 @@ class CalendarImages extends Component {
     return (
       <>
       <h2>{this.props.selectedDateFormatted}</h2>
-      {this.state.imageArray.map(image => {
+      {this.state.photoArray.map((image,index) => {
 
         return (
-          <div className="calendar-image">
-            <img src={image}></img>
+          <div className="calendar-image" key={index}>
+            <img src={image.img_src}></img>
+            <div className="delete-button" onClick={()=>this.deleteImage(index)} id={image.id}>X</div>
           </div>
         )
       })}
