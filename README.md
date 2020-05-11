@@ -9,7 +9,8 @@ Repo: https://github.com/glicksauce/calendar_app_api
 Heroku: 
 
 #### Schema:
-dfd
+![](/public/logo192.png)
+
 #### Access:  
 Cors Policy: 
 
