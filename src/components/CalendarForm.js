@@ -11,6 +11,7 @@ class CalendarForm extends Component {
   state = {
     img_src: "",
     img_date: "",
+    journal_entry: ""
   }
 
   addImagesToState = imageArray =>{
@@ -65,6 +66,7 @@ handleSubmit =(event) => {
     const imageToAdd = {
       img_date: this.state.img_date,
       img_src: this.state.img_src,
+      journal_entry: this.state.journal_entry
     }
 
     //call POST function
@@ -108,6 +110,14 @@ handleSubmit =(event) => {
                 value={this.state.img_src}
                 onChange={this.handleChange}
             />
+            <input 
+                type="text"
+                id="journal_entry"
+                name="journal_entry"
+                placeholder="journal_entry"
+                value={this.state.journal_entry}
+                onChange={this.handleChange}
+            />            
             <input
                 type="submit"
             />

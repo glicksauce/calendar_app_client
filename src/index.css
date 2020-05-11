@@ -13,12 +13,19 @@ code {
 }
 
 .calendar-image{
-  width: 200px;
+ width: 80%;
+ background: yellow;
 }
 
 img{
-  width: 100%;
+  display: block;
+  width: 250px;
 }
+
+.journal-entry{
+  float: left;
+}
+
 .delete-button{
   position: relative;
   display: inline;

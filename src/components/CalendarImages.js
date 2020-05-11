@@ -101,6 +101,7 @@ class CalendarImages extends Component {
         return (
           <div className="calendar-image" key={index}>
             <img src={image.img_src}></img>
+            <div class="journal-entry">{image.journal_entry}</div>
             <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
           </div>
         )
