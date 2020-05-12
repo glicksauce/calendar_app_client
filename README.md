@@ -6,7 +6,7 @@ A web app that lets you save journal entries and photos to a calendar back end
 ### Back End
 #### A postgresql DB built using Rails
 Repo: https://github.com/glicksauce/calendar_app_api  
-Heroku: 
+Heroku: https://calendar-journal-api.herokuapp.com/
 
 #### Schema:
 ![](/public/current_schema.PNG)  

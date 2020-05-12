@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar'
 import CalendarImages from './CalendarImages.js'
-import * as $ from 'jquery'
-import CalendarDisplay from './CalendarDisplay.js'
-import { render } from '@testing-library/react';
+// import * as $ from 'jquery'
+// import CalendarDisplay from './CalendarDisplay.js'
+// import { render } from '@testing-library/react';
 
 
 class CalendarGrid extends Component {
@@ -27,15 +27,15 @@ class CalendarGrid extends Component {
     console.log("state date is", stateDateFormatted)
     fetch('/calendars')                                        
     .then(response => response.json())                                            
-    .then(json => {
-      console.log(json[0].img_date)
-      if (json[0].img_date == stateDateFormatted){
-        console.log("they equals")
-        console.log(json[0].photos)
-      } else{
-        console.log("they no equals")
-      }
-    })                                              
+    // .then(json => {
+    //   console.log(json[0].img_date)
+    //   if (json[0].img_date == stateDateFormatted){
+    //     console.log("they equals")
+    //     console.log(json[0].photos)
+    //   } else{
+    //     console.log("they no equals")
+    //   }
+    // })                                              
     .catch(err => console.log(err)) 
   }
   // componentDidMount() {

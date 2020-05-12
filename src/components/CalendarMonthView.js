@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MonthView from 'react-calendar'
-import * as $ from 'jquery'
-import CalendarDisplay from './CalendarDisplay.js'
+// import * as $ from 'jquery'
+// import CalendarDisplay from './CalendarDisplay.js'
 
 
 class CalendarMonthView extends MonthView {

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
 import Days from 'react-calendar'
-import * as $ from 'jquery'
-import CalendarDisplay from './CalendarDisplay.js'
+// import React, { Component } from 'react';
+// import * as $ from 'jquery'
+// import CalendarDisplay from './CalendarDisplay.js'
 
 
 class CalendarDay extends Days {

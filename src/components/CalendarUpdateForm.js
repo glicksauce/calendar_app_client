@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar'
-
-import * as $ from 'jquery'
-import CalendarDisplay from './CalendarDisplay.js'
-import { render } from '@testing-library/react';
+// import Calendar from 'react-calendar'
+// import * as $ from 'jquery'
+// import CalendarDisplay from './CalendarDisplay.js'
+// import { render } from '@testing-library/react';
 
 
 class CalendarUpdateForm extends Component {
@@ -78,7 +77,7 @@ componentDidMount() {
   render() {
         return (
             <>
-            <div className="update-container" id={"update-container"+this.state.id} hidden='true'>    
+            <div className="update-container" id={"update-container"+this.state.id} hidden={true}>    
             <form onSubmit={this.handleSubmit}>       
                 <input 
                     className="journal-entry" //borrowing this className even though its not journal entry

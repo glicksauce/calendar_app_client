@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar'
-
 import * as $ from 'jquery'
-import CalendarDisplay from './CalendarDisplay.js'
-import { render } from '@testing-library/react';
+// import Calendar from 'react-calendar'
+// import CalendarDisplay from './CalendarDisplay.js'
+// import { render } from '@testing-library/react';
 
 
 class CalendarForm extends Component {
