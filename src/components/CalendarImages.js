@@ -57,6 +57,15 @@ class CalendarImages extends Component {
     })
   }
 
+  //successor to 'addedImage
+  updateState = (imageEntry, index) =>{
+    let newPhotos = this.state.photoArray
+    newPhotos.splice(index,1, imageEntry)
+    this.setState({
+      photoArray: newPhotos
+    })
+  }
+
   deleteImage = (imageIndex, imageId) =>{
     console.log("delete clicked index : " + imageIndex + ", Id: " + imageId)
 
@@ -118,6 +127,8 @@ class CalendarImages extends Component {
           <CalendarUpdateForm
             entry={this.state.photoArray[index]}
             handleUpdate={this.props.handleUpdate}
+            updateState={this.updateState}
+            displayIndex={index}
           />
         </div>
         )

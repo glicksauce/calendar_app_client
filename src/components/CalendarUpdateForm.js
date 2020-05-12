@@ -50,17 +50,19 @@ class CalendarUpdateForm extends Component {
     //call PUT function
     let newPhotoObject
     this.props.handleUpdate(event, entryToModify, this.state.id)
+
+    this.props.updateState(entryToModify,this.props.displayIndex)
     // //pause to get POST results
     // setTimeout(()=>{
     //     console.log("new photo id is: " + JSON.stringify(newPhotoObject))
     //     imageToAdd["id"] = newPhotoObject.id
     // },500)
 
-//     //add new image to state but only if on the date image was added in
-//     let propsDate = this.dateConvert(this.props.selectedDate)
-//     if (propsDate == imageToAdd.img_date){
-//         this.props.addedImage(imageToAdd.img_src, imageToAdd)
-//     }
+    //add updated image to state but only if on the date image was added in
+    // let propsDate = this.dateConvert(this.props.selectedDate)
+    // if (propsDate == imageToAdd.img_date){
+    //     this.props.addedImage(entryToModify.img_src, imageToAdd)
+    // }
 
 }
 
