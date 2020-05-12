@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import CalendarForm from './CalendarForm.js'
 import CalendarUpdateForm from './CalendarUpdateForm.js'
 import * as $ from 'jquery'
+
+let BaseURL = process.env.REACT_APP_BACKEND
+
 // import Calendar from 'react-calendar'
 // import CalendarDisplay from './CalendarDisplay.js'
 // import { render } from '@testing-library/react';
@@ -28,6 +31,7 @@ class CalendarImages extends Component {
   }
 
   displayImage = (date) =>{
+
     //converts date before calling fetch
     const stateDateFormatted = new Date(date)
     .toISOString()
@@ -35,7 +39,8 @@ class CalendarImages extends Component {
     .substring(0,10)
     
     console.log("clicked date is", stateDateFormatted)
-    fetch('/calendars/' + stateDateFormatted)                                        
+    console.log(process.env)
+    fetch(BaseURL+ '/calendars/' + stateDateFormatted)                                        
     .then(response => response.json())                                            
     .then(json => {
       console.log("fetch results: ", json)
@@ -101,7 +106,7 @@ class CalendarImages extends Component {
         this.displayImage(clickedDate)
       }
     })
-    fetch('/calendars')                                        
+    fetch(BaseURL + '/calendars')                                        
       .then(response => response.json())                                            
       .then(json => console.log(json))                                              
       .catch(err => console.log(err)) 

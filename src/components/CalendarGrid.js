@@ -5,6 +5,7 @@ import CalendarImages from './CalendarImages.js'
 // import CalendarDisplay from './CalendarDisplay.js'
 // import { render } from '@testing-library/react';
 
+let BaseURL = process.env.REACT_APP_BACKEND
 
 class CalendarGrid extends Component {
   
@@ -25,7 +26,7 @@ class CalendarGrid extends Component {
     .substring(0,10)
     
     console.log("state date is", stateDateFormatted)
-    fetch('/calendars')                                        
+    fetch(BaseURL + '/calendars')                                        
     .then(response => response.json())                                            
     // .then(json => {
     //   console.log(json[0].img_date)

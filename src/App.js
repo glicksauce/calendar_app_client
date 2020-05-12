@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import CalendarGrid from './components/CalendarGrid.js'
+
+let BaseURL = process.env.REACT_APP_BACKEND
+
 // import logo from './logo.svg';
 // import CalendarDisplay from './components/CalendarDisplay.js'
 // import Calendar from 'react-calendar'
@@ -14,7 +17,7 @@ class App extends Component {
 
     // let obj;
       event.preventDefault()
-      return await Promise.resolve(fetch('http://localhost:3000/photos',{
+      return await Promise.resolve(fetch(BaseURL + '/photos',{
         body: JSON.stringify(formInputs),
         method: 'POST',
         headers: {
@@ -32,7 +35,7 @@ class App extends Component {
 
       // let obj;
         event.preventDefault()
-        return await Promise.resolve(fetch('http://localhost:3000/photos/' + photo_id,{
+        return await Promise.resolve(fetch(BaseURL + '/photos/' + photo_id,{
           body: JSON.stringify(formInputs),
           method: 'PUT',
           headers: {
@@ -46,7 +49,7 @@ class App extends Component {
         )}      
 
   deletePhoto = (photoID) =>{
-    fetch('http://localhost:3000/photos/' + photoID ,{
+    fetch(BaseURL + '/photos/' + photoID ,{
         method: 'DELETE',
         headers: {
           'Accept': 'application/json, text/plain, */*',
