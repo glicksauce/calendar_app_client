@@ -76,7 +76,7 @@ componentDidMount() {
   render() {
         return (
             <>
-            <div className="update-container">    
+            <div className="update-container" id={"update-container"+this.state.id} hidden='true'>    
             <form onSubmit={this.handleSubmit}>       
                 <input 
                     className="journal-entry" //borrowing this className even though its not journal entry
@@ -88,6 +88,7 @@ componentDidMount() {
                     onChange={this.handleChange}
                 />
                 <input 
+                    className="journal-entry" //borrowing this className even though its not journal entry
                     type="text"
                     id="img_src"
                     name="img_src"

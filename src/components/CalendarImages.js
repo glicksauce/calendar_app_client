@@ -75,9 +75,11 @@ class CalendarImages extends Component {
     this.props.deletePhoto(imageId)
   }
 
-  loadUpdateForm = () =>{
-    console.log("update clicked")
-    $('.calendar-image').hide()
+  displayUpdateForm = (imageId) =>{
+    // console.log(imageId)
+    // console.log("update clicked")
+    $('#update-container'+imageId).toggle()
+
   }
 
   componentDidMount() {
@@ -110,7 +112,7 @@ class CalendarImages extends Component {
             <img src={image.img_src}></img>
             <div className="journal-entry">{image.journal_entry}</div>
             <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
-            <div className="update" onClick={()=>this.loadUpdateForm()}>update</div>
+            <div className="update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
           </div>
 
           <CalendarUpdateForm
