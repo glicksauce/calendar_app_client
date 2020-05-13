@@ -26,20 +26,22 @@ Production:
 ### Front end
 #### Built using React
 Repo: https://github.com/glicksauce/calendar_app_client 
-Heroku: https://calendar-journal-client.herokuapp.com/
+Heroku: https://calendar-journal-client.herokuapp.com/  
 
 #### Structure:
 
 
-#### NPM Packages
+#### Dependencies
 ##### react-calendar: https://www.npmjs.com/package/react-calendar
 - used to render a calendar element so user can select date
 
 ---
-### Improvements
+### Future Improvements
 Backend. Has some difficulties to overcome
 ![](/public/current_schema_problems.PNG)
 
 
 Need better schema to accomodate adding in multiple users:
-![](/public/improved_schema.PNG)
+![](/public/improved_schema.PNG)  
+
+integrate New York Times API to auto populate each date with front page headlines/photos of that date
