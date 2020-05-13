@@ -40,7 +40,7 @@ class CalendarImages extends Component {
     
     console.log("clicked date is", stateDateFormatted)
     console.log(process.env)
-    fetch(BaseURL+ '/calendars' + stateDateFormatted)                                        
+    fetch(BaseURL+ '/calendars/' + stateDateFormatted)                                        
     .then(response => response.json())                                            
     .then(json => {
       console.log("fetch results: ", json)
