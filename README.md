@@ -24,7 +24,7 @@ Production:
 
 ---
 ### Front end
-#### Built using React
+#### Built using React (create-react-app)
 Repo: https://github.com/glicksauce/calendar_app_client   
 Heroku: https://calendar-journal-client.herokuapp.com/  
 
