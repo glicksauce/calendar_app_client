@@ -44,4 +44,5 @@ Backend. Has some difficulties to overcome
 Need better schema to accomodate adding in multiple users:
 ![](/public/improved_schema.PNG)  
 
-integrate New York Times API to auto populate each date with front page headlines/photos of that date
+### Other Future Improvements to make
+- Integrate New York Times API to auto populate each date with front page headlines/photos of that date
