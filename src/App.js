@@ -59,6 +59,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="title">
+          <h1>Calendar Journal</h1>
+          <h3>Add photos and journal entries to your dates</h3>
+        </div>
         <CalendarGrid 
           handleSubmit={this.handleAdd}
           handleUpdate={this.handleUpdate}

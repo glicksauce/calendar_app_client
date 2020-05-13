@@ -51,9 +51,12 @@ img{
 .App{
   float: left;
   width: 100%;
-
 }
 
+.title{
+  border-bottom: solid 2px rgba(10,10,10,.2);
+  background: linear-gradient(to right, rgb(201, 128, 128), purple);
+}
 .react-calendar{
   float: left;
   margin: 50px 5%;

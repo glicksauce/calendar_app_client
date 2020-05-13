@@ -19,7 +19,7 @@ Cors Policy:
 ### Front end
 #### Built using React
 Repo: https://github.com/glicksauce/calendar_app_client 
-Heroku: 
+Heroku: https://calendar-journal-client.herokuapp.com/
 
 #### Structure:
 
