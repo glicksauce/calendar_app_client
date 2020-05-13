@@ -68,6 +68,10 @@ img{
   max-width: 800px;
 }
 
+.entries-container{
+  height: 280px;
+}
+
 .entry-container{
   width: 100%;
   height: 250px;

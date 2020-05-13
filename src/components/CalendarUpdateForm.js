@@ -108,6 +108,7 @@ componentDidMount() {
                 />            
                 <input
                     type="submit"
+                    onClick={()=> this.props.displayUpdateForm(this.state.id)}
                 />
             </form>
             </div>

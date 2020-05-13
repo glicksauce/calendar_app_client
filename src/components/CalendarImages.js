@@ -40,7 +40,7 @@ class CalendarImages extends Component {
     
     console.log("clicked date is", stateDateFormatted)
     console.log(process.env)
-    fetch(BaseURL+ '/calendars/' + stateDateFormatted)                                        
+    fetch(BaseURL+ '/calendars' + stateDateFormatted)                                        
     .then(response => response.json())                                            
     .then(json => {
       console.log("fetch results: ", json)
@@ -91,7 +91,7 @@ class CalendarImages extends Component {
 
   displayUpdateForm = (imageId) =>{
     // console.log(imageId)
-    // console.log("update clicked")
+    console.log("toggle update form clicked-image id is: ", imageId)
     $('#update-container'+imageId).toggle()
 
   }
@@ -121,22 +121,23 @@ class CalendarImages extends Component {
       {this.state.photoArray.map((image,index) => {
 
         return (
-        <div className="entry-container" key={index}>
-          {/* <div className="calendar-image" ></div> */}
-            <div className="column column1"> <img src={image.img_src} alt="-X-"></img></div>
-            <div className="column column2">{image.journal_entry}</div>
-            <div className="column column3">
-              <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
-              <div className="update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
+        <div className="entries-contaner">
+          <div className="entry-container" key={index}>
+              <div className="column column1"> <img src={image.img_src} alt="-X-"></img></div>
+              <div className="column column2">{image.journal_entry}</div>
+              <div className="column column3">
+                <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
+                <div className="update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
+              </div>
+            
             </div>
-          
-
-          <CalendarUpdateForm
-            entry={this.state.photoArray[index]}
-            handleUpdate={this.props.handleUpdate}
-            updateState={this.updateState}
-            displayIndex={index}
-          />
+            <CalendarUpdateForm
+              entry={this.state.photoArray[index]}
+              handleUpdate={this.props.handleUpdate}
+              updateState={this.updateState}
+              displayIndex={index}
+              displayUpdateForm={this.displayUpdateForm}
+            />
         </div>
         )
       })}
