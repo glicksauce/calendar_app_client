@@ -14,13 +14,13 @@ Two tables in a one-to-many relationship. One calendar can have many photos. Not
 
 #### Access:  
 Cors Policy: Setup environmental variables to restrict CORS access when not working locally:
-![](/public/cors_env.PNG)
+![](/public/cors_env.png)
   
 Dev setup:
-![](/public/cors_backend.PNG)  
+![](/public/cors_backend.png)  
 
 Production:
-![](/public/cors_frontend.PNG)  
+![](/public/cors_frontend.png)  
 
 ---
 ### Front end
