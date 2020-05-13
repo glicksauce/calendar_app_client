@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
-import Calendar from 'react-calendar'
-import * as $ from 'jquery'
+// import React, { Component } from 'react';
+// import Calendar from 'react-calendar'
+// import * as $ from 'jquery'
 
 
-class CalendarDisplay extends Calendar {
-    state = {
-        name: "jay"
-    }
+// class CalendarDisplay extends Calendar {
+//     state = {
+//         name: "jay"
+//     }
 
-    handlerIn = (event) =>{
-        $('.img-display').text(this.props.maxDetail)
-        console.log(event.currentTarget.innerHTML)
-        console.log(this.props)
-      }
+//     handlerIn = (event) =>{
+//         $('.img-display').text(this.props.maxDetail)
+//         console.log(event.currentTarget.innerHTML)
+//         console.log(this.props)
+//       }
 
-    handlerOut = () =>{
-        $('.img-display').text("img goes here")
-        //console.log("yes")
-    }      
+//     handlerOut = () =>{
+//         $('.img-display').text("img goes here")
+//         //console.log("yes")
+//     }      
 
-    componentDidMount() {
-        $('.react-calendar__tile').hover(this.handlerIn, this.handlerOut)
-      }
+//     componentDidMount() {
+//         $('.react-calendar__tile').hover(this.handlerIn, this.handlerOut)
+//       }
 
     
 
-    render() {
+//     render() {
 
 
-        return(
-            <>   
-            </>
-        )
-    }
-}
-export default CalendarDisplay
+//         return(
+//             <>   
+//             </>
+//         )
+//     }
+// }
+// export default CalendarDisplay
