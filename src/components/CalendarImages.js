@@ -122,12 +122,14 @@ class CalendarImages extends Component {
 
         return (
         <div className="entry-container" key={index}>
-          <div className="calendar-image" >
-            <img src={image.img_src} alt="-X-"></img>
-            <div className="journal-entry">{image.journal_entry}</div>
-            <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
-            <div className="update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
-          </div>
+          {/* <div className="calendar-image" ></div> */}
+            <div className="column column1"> <img src={image.img_src} alt="-X-"></img></div>
+            <div className="column column2">{image.journal_entry}</div>
+            <div className="column column3">
+              <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
+              <div className="update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
+            </div>
+          
 
           <CalendarUpdateForm
             entry={this.state.photoArray[index]}

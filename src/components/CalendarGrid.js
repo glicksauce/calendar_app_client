@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar'
 import CalendarImages from './CalendarImages.js'
+import 'react-calendar/dist/Calendar.css'
 // import * as $ from 'jquery'
 // import CalendarDisplay from './CalendarDisplay.js'
 // import { render } from '@testing-library/react';
@@ -61,6 +62,7 @@ class CalendarGrid extends Component {
         <Calendar 
         onChange={this.onChange}
         value={this.date}/>
+        <div class="visuals-container">
         <CalendarImages 
           selectedDateFormatted={this.state.date.toString().substring(0,15)}
           selectedDate = {this.state.date}
@@ -68,6 +70,7 @@ class CalendarGrid extends Component {
           handleUpdate={this.props.handleUpdate}
           deletePhoto={this.props.deletePhoto}
         />
+        </div> 
       </>
     )
   }
