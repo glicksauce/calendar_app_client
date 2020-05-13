@@ -100,8 +100,8 @@ class CalendarImages extends Component {
     
     $('.react-calendar__tile').click((e)=>{
       //sometimes this will be undefined if browser is slow or something
-      if (e != undefined) {
-        console.log($(e.target).children())
+      if ($(e.target).children().length >= 1) {
+        console.log($(e.target).children(), $(e.target).children().length)
         let clickedDate = ($(e.target).children()[0].ariaLabel)
         this.displayImage(clickedDate)
       }

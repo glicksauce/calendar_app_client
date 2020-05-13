@@ -10,8 +10,6 @@ let BaseURL = process.env.REACT_APP_BACKEND
 
 
 class App extends Component {
-  componentDidMount() {
-  }
 
   handleAdd = async (event, formInputs) =>{
 
