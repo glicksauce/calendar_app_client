@@ -17,6 +17,13 @@ class CalendarImages extends Component {
     photoArray: []
   }
 
+  clearState = () =>{
+    this.setState({
+      imageArray: [],
+      photoArray: []
+    })
+  }
+
   addImagesToState = imageArray =>{
     let images = imageArray.map(x => x.img_src)
     this.setState({
@@ -38,8 +45,11 @@ class CalendarImages extends Component {
     .toString()
     .substring(0,10)
     
+    //clear current state before fetch
+    this.clearState()
+
     console.log("clicked date is", stateDateFormatted)
-    console.log(process.env)
+    //console.log(process.env)
     fetch(BaseURL+ '/calendars/' + stateDateFormatted)                                        
     .then(response => response.json())                                            
     .then(json => {
@@ -99,7 +109,7 @@ class CalendarImages extends Component {
   componentDidMount() {
     
     $('.react-calendar__tile').click((e)=>{
-      //sometimes this will be undefined if browser is slow or something
+      //only show if event target has a child prop.
       if ($(e.target).children().length >= 1) {
         console.log($(e.target).children(), $(e.target).children().length)
         let clickedDate = ($(e.target).children()[0].ariaLabel)
@@ -121,13 +131,13 @@ class CalendarImages extends Component {
       {this.state.photoArray.map((image,index) => {
 
         return (
-        <div className="entries-contaner">
-          <div className="entry-container" key={index}>
+        <div className="entries-contaner" key={index}>
+          <div className="entry-container" >
               <div className="column column1"> <img src={image.img_src} alt="-X-"></img></div>
               <div className="column column2">{image.journal_entry}</div>
               <div className="column column3">
                 <div className="delete-button" onClick={()=>this.deleteImage(index, image.id)} id={image.id}>X</div>
-                <div className="update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
+                <div className="delete-button update" onClick={()=>this.displayUpdateForm(image.id)}>update</div>
               </div>
             
             </div>
