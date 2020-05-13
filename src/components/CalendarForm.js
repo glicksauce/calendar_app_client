@@ -81,7 +81,7 @@ handleSubmit =(event) => {
 
     //add new image to state but only if on the date image was added in
     let propsDate = this.dateConvert(this.props.selectedDate)
-    if (propsDate == imageToAdd.img_date){
+    if (propsDate === imageToAdd.img_date){
         this.props.addedImage(imageToAdd.img_src, imageToAdd)
     }
 

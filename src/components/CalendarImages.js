@@ -106,10 +106,10 @@ class CalendarImages extends Component {
         this.displayImage(clickedDate)
       }
     })
-    fetch(BaseURL + '/calendars')                                        
-      .then(response => response.json())                                            
-      .then(json => console.log(json))                                              
-      .catch(err => console.log(err)) 
+    // fetch(BaseURL + '/calendars')                                        
+    //   .then(response => response.json())                                            
+    //   .then(json => console.log(json))                                              
+    //   .catch(err => console.log(err)) 
     
   }
 
