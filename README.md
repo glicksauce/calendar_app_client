@@ -13,13 +13,13 @@ Heroku: https://calendar-journal-api.herokuapp.com/
 Two tables in a one-to-many relationship. One calendar can have many photos. Notice the primary key of calendar is the date,  not Id. This makes it easy to associate dates of a photo with the calendar(date). See below for disadvantages
 
 #### Access:  
-Cors Policy: Setup environmental variables to restrict CORS access when not working locally:
+Cors Policy: Setup environmental variables to restrict CORS access when not working locally:  
 ![](/public/cors_env.png)
   
-Dev setup:
+Dev setup:  
 ![](/public/cors_backend.png)  
 
-Production:
+Production:  
 ![](/public/cors_frontend.png)  
 
 ---
