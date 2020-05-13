@@ -57,12 +57,12 @@ img{
 .react-calendar{
   float: left;
   margin: 50px 5%;
-  width: 50%;
+  width: 400px;
 }
 
 .visuals-container{
   float: left;
-  width: 50%;
+  max-width: 800px;
 }
 
 .entry-container{
@@ -85,9 +85,4 @@ img{
 
 .column2{
   flex-basis: 45%;
-}
-.column3{
-}
-
-.delete-button, .update{
 }
